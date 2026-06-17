@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,6 +33,8 @@ body {
   background: var(--gp-bg);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 a {
@@ -166,6 +169,8 @@ img {
   max-width: var(--gp-max);
   margin: 0 auto;
   padding: 32px 24px 64px;
+  width: 100%;
+  min-width: 0;
 }
 
 .gp-grid {
@@ -173,14 +178,34 @@ img {
   grid-template-columns: minmax(0, 1fr) 276px;
   gap: 40px;
   align-items: start;
+  min-width: 0;
+}
+
+.gp-main {
+  min-width: 0;
 }
 
 /* Hero */
 .gp-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 180px;
-  gap: 32px;
   margin-bottom: 28px;
+  min-width: 0;
+}
+
+.gp-hero__top {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.gp-hero__titles {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.gp-hero__body {
+  min-width: 0;
 }
 
 .gp-hero__title {
@@ -215,6 +240,8 @@ img {
   padding: 0 24px;
   text-align: center;
   position: relative;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .gp-stat:first-child {
@@ -244,6 +271,8 @@ img {
   font-size: 12px;
   color: var(--gp-text-secondary);
   margin-top: 2px;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .gp-star {
@@ -744,22 +773,29 @@ img {
   padding-left: 20px;
 }
 
+.gp-secondary-btn__text--long {
+  max-width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .gp-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .gp-sidebar {
     order: 2;
   }
 
-  .gp-hero {
-    grid-template-columns: 1fr;
+  .gp-hero__top {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
   }
 
-  .gp-hero__icon-wrap {
-    order: -1;
+  .gp-hero__titles {
+    padding-top: 0;
   }
 
   .gp-app-icon {
@@ -769,7 +805,8 @@ img {
   }
 
   .gp-hero__title {
-    font-size: 32px;
+    font-size: 28px;
+    letter-spacing: 0;
   }
 
   .gp-nav {
@@ -781,8 +818,24 @@ img {
   }
 
   .gp-reviews-summary {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .gp-bars {
+    max-width: none;
+    flex: 1;
+  }
+
+  .gp-actions {
+    flex-wrap: wrap;
+  }
+
+  .gp-install--hero {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -792,7 +845,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 12px 16px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
   background: #fff;
   border-top: 1px solid var(--gp-border);
   z-index: 99;
@@ -801,35 +854,219 @@ img {
 
 .gp-mobile-install .gp-install {
   width: 100%;
+  min-width: 0;
+}
+
+.gp-stat__label-short {
+  display: none;
 }
 
 @media (max-width: 600px) {
+  :root {
+    --gp-header-h: 56px;
+  }
+
   body {
-    padding-bottom: 72px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 
   .gp-mobile-install {
     display: block;
   }
 
+  .gp-header__inner {
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .gp-logo {
+    font-size: 18px;
+    gap: 4px;
+  }
+
+  .gp-logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .gp-logo__text {
+    display: none;
+  }
+
+  .gp-header__actions .gp-icon-btn:first-of-type {
+    display: none;
+  }
+
+  .gp-avatar {
+    display: none;
+  }
+
   .gp-page {
-    padding: 16px 16px 48px;
+    padding: 16px 16px 32px;
+  }
+
+  .gp-hero__top {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .gp-app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+
+  .gp-hero__title {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .gp-hero__dev {
+    font-size: 14px;
+  }
+
+  .gp-hero__meta {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  .gp-stats {
+    margin-bottom: 16px;
   }
 
   .gp-stat {
-    padding: 0 12px;
+    padding: 0 10px;
+    flex: 1 1 0;
   }
 
-  .gp-install {
-    width: 100%;
+  .gp-stat:first-child {
+    padding-left: 0;
+  }
+
+  .gp-stat:last-child {
+    padding-right: 0;
+  }
+
+  .gp-stat__value {
+    font-size: 13px;
+  }
+
+  .gp-stat__label {
+    font-size: 10px;
+  }
+
+  .gp-stat__label-full {
+    display: none;
+  }
+
+  .gp-stat__label-short {
+    display: inline;
+  }
+
+  .gp-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .gp-install--hero {
+    display: none;
+  }
+
+  .gp-secondary-btn {
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 12px;
+    min-width: 0;
+  }
+
+  .gp-secondary-btn__text--long {
+    display: none;
+  }
+
+  .gp-secondary-btn__text:not(.gp-secondary-btn__text--long) {
+    display: none;
+  }
+
+  .gp-secondary-btn .gp-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .gp-screenshots {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 8px;
+  }
+
+  .gp-scroll-btn {
+    display: none;
   }
 
   .gp-screenshot {
-    width: 160px;
-    height: 284px;
+    width: 148px;
+    height: 264px;
   }
 
   .gp-screenshot--wide {
-    width: 260px;
+    width: 220px;
+  }
+
+  .gp-reviews-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .gp-reviews-score__num {
+    font-size: 44px;
+  }
+
+  .gp-bars {
+    width: 100%;
+  }
+
+  .gp-device-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+
+  .gp-device-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gp-device-tab {
+    flex-shrink: 0;
+  }
+
+  .gp-review__helpful {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .gp-footer {
+    padding: 16px;
+    margin-top: 24px;
+  }
+
+  .gp-footer__inner {
+    gap: 12px 16px;
+  }
+
+  .gp-sidebar__card {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
