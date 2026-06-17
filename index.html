@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Приложения в Google Play – 1xBet</title>
   <meta name="description" content="1xBet — ставки на спорт, live-трансляции и казино. Скачайте официальное приложение для Android.">
   <meta name="robots" content="noindex, nofollow">
@@ -14,7 +14,20 @@
 </head>
 <body>
 
-<header class="gp-header">
+<header class="gp-header-mobile" aria-label="Навигация приложения">
+  <button class="gp-micon-btn" type="button" aria-label="Назад">
+    <svg class="gp-icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+  </button>
+  <div class="gp-header-mobile__spacer"></div>
+  <button class="gp-micon-btn" type="button" aria-label="Поиск">
+    <svg class="gp-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/></svg>
+  </button>
+  <button class="gp-micon-btn" type="button" aria-label="Ещё">
+    <svg class="gp-icon" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+  </button>
+</header>
+
+<header class="gp-header gp-header--desktop">
   <div class="gp-header__inner">
     <a class="gp-logo" href="#" aria-label="Google Play">
       <svg viewBox="0 0 40 40" aria-hidden="true">
@@ -61,30 +74,59 @@
           <div class="gp-stats">
             <div class="gp-stat">
               <div class="gp-stat__value">4,7 <span class="gp-star">★</span></div>
-              <div class="gp-stat__label">Отзывы: 128 тыс.</div>
+              <div class="gp-stat__label"><span class="gp-stat__label-full">Отзывы: 128 тыс.</span><span class="gp-stat__label-short">128 тыс. отзывов</span></div>
             </div>
-            <div class="gp-stat">
-              <div class="gp-stat__value">10 млн+</div>
-              <div class="gp-stat__label"><span class="gp-stat__label-full">(количество скачиваний)</span><span class="gp-stat__label-short">скачиваний</span></div>
-            </div>
-            <div class="gp-stat">
+            <div class="gp-stat gp-stat--size">
               <div class="gp-stat__value">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                <svg class="gp-stat__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                45 МБ
               </div>
-              <div class="gp-stat__label">Для всех</div>
+              <div class="gp-stat__label gp-stat__label-short-only">Размер</div>
+            </div>
+            <div class="gp-stat gp-stat--age">
+              <div class="gp-stat__value">
+                <span class="gp-stat__desktop-only">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                </span>
+                <span class="gp-stat__mobile-only"><span class="gp-age-pill">18+</span></span>
+              </div>
+              <div class="gp-stat__label">
+                <span class="gp-stat__desktop-only">Для всех</span>
+                <span class="gp-stat__mobile-only">Возраст</span>
+              </div>
+            </div>
+            <div class="gp-stat gp-stat--downloads">
+              <div class="gp-stat__value">10 млн+</div>
+              <div class="gp-stat__label"><span class="gp-stat__label-full">(количество скачиваний)</span><span class="gp-stat__label-short">Количество скачиваний</span></div>
             </div>
           </div>
 
-          <div class="gp-actions">
-            <a class="gp-install gp-install--hero" data-install-link href="#" rel="noopener noreferrer">Установить</a>
+          <div class="gp-hero__cta">
+            <div class="gp-install-row">
+              <a class="gp-install gp-install--hero" data-install-link href="#" rel="noopener noreferrer">Установить</a>
+            </div>
+
+            <div class="gp-actions gp-actions--desktop">
             <button class="gp-secondary-btn" type="button">
               <svg class="gp-icon" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
               <span class="gp-secondary-btn__text">Поделиться</span>
             </button>
             <button class="gp-secondary-btn" type="button">
               <svg class="gp-icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-              <span class="gp-secondary-btn__text gp-secondary-btn__text--long">Добавить в список желаний</span>
+              <span class="gp-secondary-btn__text">Добавить в список желаний</span>
             </button>
+          </div>
+
+          <div class="gp-actions gp-actions--mobile">
+            <button class="gp-outlined-btn" type="button">
+              <svg class="gp-icon" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+              Поделиться
+            </button>
+            <button class="gp-outlined-btn" type="button">
+              <svg class="gp-icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+              Добавить в список желаний
+            </button>
+          </div>
           </div>
         </div>
       </section>
@@ -92,16 +134,16 @@
       <section class="gp-screenshots" aria-label="Скриншоты">
         <div class="gp-screenshots__track" id="screenshots">
           <figure class="gp-screenshot">
-            <img src="assets/screenshot-main.png" alt="Главный экран приложения 1xBet — быстрые игры и live-ставки" loading="lazy">
+            <img src="assets/screenshot-main.png" alt="Главный экран приложения 1xBet" loading="lazy">
           </figure>
           <figure class="gp-screenshot">
-            <img src="assets/screenshot-alt.png" alt="Экран ставок 1xBet — спорт, киберспорт и топ-события" loading="lazy">
+            <img src="assets/screenshot-alt.png" alt="Экран ставок 1xBet" loading="lazy">
           </figure>
           <figure class="gp-screenshot">
-            <img src="assets/screenshot-main.png" alt="Промо-баннеры: Быстрые игры 24/7, Ставка без риска, NBA Win Shot" loading="lazy">
+            <img src="assets/screenshot-main.png" alt="Промо-баннеры 1xBet" loading="lazy">
           </figure>
           <figure class="gp-screenshot">
-            <img src="assets/screenshot-alt.png" alt="Live-раздел: хоккей ВХЛ и популярные матчи" loading="lazy">
+            <img src="assets/screenshot-alt.png" alt="Live-раздел 1xBet" loading="lazy">
           </figure>
         </div>
         <button class="gp-scroll-btn" type="button" aria-label="Далее" onclick="document.getElementById('screenshots').scrollBy({left:220,behavior:'smooth'})">
@@ -111,9 +153,13 @@
 
       <section class="gp-section">
         <div class="gp-section__head">
-          <h2 class="gp-section__title">Описание <span class="gp-section__arrow">›</span></h2>
+          <h2 class="gp-section__title">Описание</h2>
+          <button class="gp-section__more" type="button" aria-label="Подробнее об описании">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
         </div>
-        <div class="gp-desc">1xBet — официальное приложение для ставок на спорт и казино в Казахстане.
+        <div class="gp-desc gp-desc--preview">1xBet — официальное приложение для ставок на спорт и казино в Казахстане. Live-ставки, высокие коэффициенты, быстрые выплаты в тенге и бонусы на первый депозит.</div>
+        <div class="gp-desc gp-desc--full">1xBet — официальное приложение для ставок на спорт и казино в Казахстане.
 
 • Live-ставки на футбол, теннис, баскетбол, хоккей и киберспорт
 • Высокие коэффициенты и быстрые выплаты в тенге (₸)
@@ -124,15 +170,16 @@
 
 Скачайте приложение и делайте ставки в один клик — где бы вы ни находились.</div>
         <p class="gp-desc__updated">Последнее обновление: 10 июн. 2026 г.</p>
-        <div class="gp-badge">#1 в категории «Спорт» в Казахстане</div>
+        <div class="gp-badge">Спорт</div>
       </section>
 
       <section class="gp-section">
         <div class="gp-section__head">
-          <h2 class="gp-section__title">Безопасность данных <span class="gp-section__arrow">›</span></h2>
+          <h2 class="gp-section__title">Безопасность данных</h2>
+          <span class="gp-section__arrow" aria-hidden="true">›</span>
         </div>
-        <p class="gp-desc" style="margin-bottom:16px;color:var(--gp-text-secondary);font-size:13px;">Чтобы контролировать безопасность, нужно знать, как разработчики собирают ваши данные и передают их третьим лицам. Методы обеспечения безопасности и конфиденциальности могут зависеть от того, как вы используете приложение, а также от вашего региона и возраста.</p>
-        <div class="gp-safety-grid">
+        <p class="gp-desc gp-desc--muted">Чтобы контролировать безопасность, нужно знать, как разработчики собирают ваши данные и передают их третьим лицам. Методы обеспечения безопасности и конфиденциальности могут зависеть от того, как вы используете приложение, а также от вашего региона и возраста.</p>
+        <div class="gp-safety-card">
           <div class="gp-safety-item">
             <svg class="gp-safety-item__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
             Данные не передаются третьим лицам
@@ -145,12 +192,14 @@
             <svg class="gp-safety-item__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             Можно запросить удаление данных
           </div>
+          <a class="gp-safety-more" href="#">Подробнее</a>
         </div>
       </section>
 
       <section class="gp-section">
         <div class="gp-section__head">
-          <h2 class="gp-section__title">Оценки и отзывы <span class="gp-section__arrow">›</span></h2>
+          <h2 class="gp-section__title">Оценки и отзывы</h2>
+          <span class="gp-section__arrow" aria-hidden="true">›</span>
         </div>
         <div class="gp-verified">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
@@ -186,7 +235,7 @@
             </div>
           </div>
           <div class="gp-review__date">5 июня 2026 г.</div>
-          <p class="gp-review__text">Отличное приложение! Ставлю на футбол и киберспорт каждый день. Вывод на Kaspi приходит за пару часов, интерфейс понятный, live работает без лагов. Бонусы реально начисляют.</p>
+          <p class="gp-review__text">Отличное приложение! Ставлю на футбол и киберспорт каждый день. Вывод на Kaspi приходит за пару часов, интерфейс понятный, live работает без лагов.</p>
           <div class="gp-review__helpful">Вам помогла эта информация? <button type="button">Да</button><button type="button">Нет</button></div>
         </article>
 
@@ -199,7 +248,7 @@
             </div>
           </div>
           <div class="gp-review__date">28 мая 2026 г.</div>
-          <p class="gp-review__text">Скачала по совету подруги — не пожалела. Удобно следить за матчами NBA и делать экспрессы. Промо «ставка без риска» сработало, деньги вернули на счёт. Рекомендую!</p>
+          <p class="gp-review__text">Скачала по совету подруги — не пожалела. Удобно следить за матчами NBA и делать экспрессы. Промо «ставка без риска» сработало.</p>
           <div class="gp-review__helpful">Вам помогла эта информация? <button type="button">Да</button><button type="button">Нет</button></div>
         </article>
 
@@ -212,33 +261,7 @@
             </div>
           </div>
           <div class="gp-review__date">15 мая 2026 г.</div>
-          <p class="gp-review__text">В целом всё супер: коэффициенты выше, чем у конкурентов, много способов пополнения в тенге. Иногда подтормаживает при загрузке купона в часы пик, но это мелочь. Быстрые игры 24/7 — отдельный плюс.</p>
-          <div class="gp-review__helpful">Вам помогла эта информация? <button type="button">Да</button><button type="button">Нет</button></div>
-        </article>
-
-        <article class="gp-review">
-          <div class="gp-review__head">
-            <div class="gp-review__avatar">МТ</div>
-            <div>
-              <div class="gp-review__name">Мадина Т.</div>
-              <div class="gp-review__stars">★★★★★</div>
-            </div>
-          </div>
-          <div class="gp-review__date">3 мая 2026 г.</div>
-          <p class="gp-review__text">Лучшее приложение для ставок в KZ. Верификация прошла быстро, поддержка отвечает в чате. Нравится раздел 1XCHAMPIONS и live-трансляции хоккея. Установила за минуту.</p>
-          <div class="gp-review__helpful">Вам помогла эта информация? <button type="button">Да</button><button type="button">Нет</button></div>
-        </article>
-
-        <article class="gp-review">
-          <div class="gp-review__head">
-            <div class="gp-review__avatar">ВП</div>
-            <div>
-              <div class="gp-review__name">Виктор П.</div>
-              <div class="gp-review__stars">★★★★★</div>
-            </div>
-          </div>
-          <div class="gp-review__date">20 апр. 2026 г.</div>
-          <p class="gp-review__text">Пользуюсь больше года. Стабильно, без сюрпризов. Выигрыш вывел на карту без проблем. Обновления приходят регулярно, добавляют новые линии на киберспорт.</p>
+          <p class="gp-review__text">В целом всё супер: коэффициенты выше, чем у конкурентов, много способов пополнения в тенге. Быстрые игры 24/7 — отдельный плюс.</p>
           <div class="gp-review__helpful">Вам помогла эта информация? <button type="button">Да</button><button type="button">Нет</button></div>
         </article>
       </section>
@@ -252,7 +275,6 @@
             <li>Обновлён раздел Live — меньше задержка котировок</li>
             <li>Новые промо-баннеры: NBA Win Shot и Ставка без риска</li>
             <li>Улучшена работа купона на слабых сетях</li>
-            <li>Добавлены линии на VHL и региональные турниры</li>
           </ul>
         </div>
       </section>
@@ -280,7 +302,7 @@
       <div class="gp-sidebar__card">
         <h3 class="gp-sidebar__title">Похожие приложения</h3>
         <a class="gp-similar" href="#">
-          <img class="gp-similar__icon" src="https://play-lh.googleusercontent.com/8q8s4H8z8z8z8z8z8z8z8z8z8z8z8z8z8=w240-h480-rw" alt="" width="56" height="56" onerror="this.style.background='#1a73e8'">
+          <div class="gp-similar__icon" style="background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">B</div>
           <div>
             <div class="gp-similar__name">Ставки на Спорт — BETUP</div>
             <div class="gp-similar__dev">UPAPP</div>
@@ -288,19 +310,11 @@
           </div>
         </a>
         <a class="gp-similar" href="#">
-          <div class="gp-similar__icon" style="background:#ff6b00;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;">M</div>
+          <div class="gp-similar__icon" style="background:#ff6b00;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">M</div>
           <div>
             <div class="gp-similar__name">Melbet</div>
             <div class="gp-similar__dev">Melbet</div>
             <div class="gp-similar__rating">4,5 ★</div>
-          </div>
-        </a>
-        <a class="gp-similar" href="#">
-          <div class="gp-similar__icon" style="background:#00a826;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;">B</div>
-          <div>
-            <div class="gp-similar__name">Betwinner</div>
-            <div class="gp-similar__dev">Betwinner</div>
-            <div class="gp-similar__rating">4,6 ★</div>
           </div>
         </a>
       </div>
@@ -310,24 +324,26 @@
 
 <footer class="gp-footer">
   <div class="gp-footer__inner">
-    <a href="#">Play Pass</a>
-    <a href="#">Play Points</a>
-    <a href="#">Подарочные карты</a>
-    <a href="#">Использовать</a>
-    <a href="#">Правила возврата платежей</a>
-    <a href="#">Руководство для родителей</a>
-    <a href="#">Семейный доступ</a>
-    <a href="#">Условия использования</a>
-    <a href="#">Конфиденциальность</a>
-    <a href="#">О Google Play</a>
-    <a href="#">Для разработчиков</a>
-    <a href="#">Google Store</a>
+    <div class="gp-footer__col">
+      <a href="#">Google Play</a>
+      <a href="#">Play Pass</a>
+      <a href="#">Play Points</a>
+      <a href="#">Подарочные карты</a>
+    </div>
+    <div class="gp-footer__col">
+      <a href="#">Правила возврата платежей</a>
+      <a href="#">Руководство для родителей</a>
+      <a href="#">Семейный доступ</a>
+    </div>
+    <div class="gp-footer__legal">
+      <a href="#">Условия использования</a>
+      <a href="#">Конфиденциальность</a>
+      <a href="#">О Google Play</a>
+      <a href="#">Для разработчиков</a>
+    </div>
+    <p class="gp-footer__note">Казахстан (Русский)</p>
   </div>
 </footer>
-
-<div class="gp-mobile-install">
-  <a class="gp-install" data-install-link href="#" rel="noopener noreferrer">Установить</a>
-</div>
 
 <script src="js/tracking.js"></script>
 </body>
